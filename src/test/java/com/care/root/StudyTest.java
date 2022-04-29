@@ -7,15 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DisplayNameGeneration;
-import org.junit.jupiter.api.DisplayNameGenerator;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.junit.jupiter.api.condition.EnabledOnJre;
 import org.junit.jupiter.api.condition.EnabledOnOs;
@@ -26,6 +18,7 @@ import org.junit.jupiter.api.condition.OS;
 class StudyTest {
 
 	@Test
+	//@Tag("local")
 	@DisplayName("스터디 만들기") //테스트하는 메소드이름 설정 가능
 	@EnabledOnJre(JRE.JAVA_11) // 해당 jre 에서만 실행
 	@EnabledOnOs(OS.WINDOWS) // 해당 os 에서만 실행
@@ -57,9 +50,11 @@ class StudyTest {
 		
 	}
 	
-	@Test
+
 	// @Disabled // 실행하고 싶지 않은 테스트코드에 사용한다.
 	// @EnabledIfEnvironmentVariable(named = "", matches="") 매칭되는 값이 있으면 테스트 실행
+	@Test
+	//@Tag("local") // 테스트 실행환경 설정
 	void create_other_class() {
 		System.out.println("Create1");
 	}
